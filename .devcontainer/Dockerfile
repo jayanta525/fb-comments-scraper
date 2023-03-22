@@ -1,0 +1,11 @@
+ARG VARIANT="3.11-buster"
+FROM python:${VARIANT}
+
+# WORKDIR /usr/src/app
+
+# COPY ../requirements.txt ./
+# RUN pip install --no-cache-dir -r ./requirements.txt
+
+# COPY . .
+
+# CMD [ "python", "./your-daemon-or-script.py" ]
