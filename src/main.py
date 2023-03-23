@@ -7,6 +7,11 @@ import parse_credentials
 import fb_scrapper
 
 def main():
+    """
+    Entrypoint for the program
+
+    This function parses the command line arguments and calls the other functions
+    """
     parser = argparse.ArgumentParser(description='Facebook Post Comments Scrapper')
     parser.add_argument('credentials_file', type=str,
                         help='A txt file with username and password')

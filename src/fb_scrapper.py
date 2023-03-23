@@ -8,7 +8,8 @@ import fb_helper
 import process_bs
 
 def set_chrome_options() -> None:
-    """Sets chrome options for Selenium.
+    """
+    Sets chrome options for Selenium.
     Chrome options for headless browser is enabled.
     """
     chrome_options = Options()
@@ -21,6 +22,11 @@ def set_chrome_options() -> None:
     return chrome_options
 
 def main(email, password, urls, out_dir):
+    """
+    main scraper function
+    inputs are email, password, urls, out_dir
+    this runs an instance of chrome in headless mode
+    """
     chrome_opts = set_chrome_options()
     driver = webdriver.Chrome(options=chrome_opts)
     fb_helper._login(driver, email, password)
@@ -39,5 +45,4 @@ def main(email, password, urls, out_dir):
     driver.close()
 
 if __name__ == '__main__':
-    # _process_bs()
     print("This module cannot be run directly. Please run main.py instead.")

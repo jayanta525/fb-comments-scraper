@@ -31,5 +31,4 @@ def main(html, outdir):
 
 
 if __name__ == '__main__':
-    # _process_bs()
     print("This module cannot be run directly. Please run main.py instead.")

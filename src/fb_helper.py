@@ -3,6 +3,10 @@ import time
 import re
 
 def _login(browser, email, password):
+    """
+    Login to facebook
+    Inputs are email and password
+    """
     browser.get("http://facebook.com")
     browser.find_element("name", "email").send_keys(email)
     browser.find_element("name", "pass").send_keys(password)
@@ -12,6 +16,10 @@ def _login(browser, email, password):
 
 
 def _get_comment_amount(browser):
+    """
+    Find the amount of comments on a post
+    Parse the text to get the number of comments
+    """
     temp = browser.find_elements("xpath", "//span[contains(text(), 'of')]")
     for item in temp:
         """
@@ -34,13 +42,19 @@ def _get_comment_amount(browser):
 
 
 def _get_more_comments(browser):
+    """
+    Click the 'View more comments' button
+    """
     browser.find_element(
         "xpath", "//span[contains(text(), 'View more comments')]").click()
     time.sleep(5)
 
 
 def _get_comments(browser):
-    # loop until the amount of comments is equal to the total amount of comments
+    """
+    Get all comments from a post
+    Loop until all comments are loaded
+    """
     while True:
         num1, num2 = _get_comment_amount(browser)
         if num1 + 50 > num2:
@@ -49,5 +63,4 @@ def _get_comments(browser):
             _get_more_comments(browser)
 
 if __name__ == '__main__':
-    # _process_bs()
     print("This module cannot be run directly. Please run main.py instead.")
