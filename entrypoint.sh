@@ -1,2 +1,2 @@
 #!/bin/sh -l
-/app/main.py -h
+main.py $1 $2 $3
