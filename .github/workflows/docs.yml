@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - run: pip3 install pdoc3
+      - run: pip3 install -r requirements.txt
 
       - run: pdoc3 --html src/*.py
 
