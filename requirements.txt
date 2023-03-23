@@ -1,4 +1,4 @@
 selenium
 beautifulsoup4
 argparse
-pdoc3
+pdoc
